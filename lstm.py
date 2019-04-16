@@ -50,7 +50,7 @@ def create_model(predictors, label, max_sequence_len, word_lenght):
     input_len = max_sequence_len - 1
     model = Sequential()
     model.add(Embedding(word_lenght, 10, input_length=input_len))
-    model.add(LSTM(128, input_shape = (max_sequence_len, word_lenght)))
+    model.add(LSTM(128))
     model.add(Dropout(0.2))
     model.add(Dense(word_lenght, activation='softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='adam')
